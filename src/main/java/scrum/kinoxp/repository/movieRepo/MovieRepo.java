@@ -10,7 +10,7 @@ import java.util.List;
 public interface MovieRepo {
 
     public void createMovie (Movie movie);
-    public void readMovie (int index);
+    public void deleteMovie (int index);
     public void updateMovie (Movie movie);
     Movie getMovie (int index);
     List<Movie> getMovies();

@@ -9,7 +9,7 @@ import java.util.List;
 public interface ActorRepo {
 
     public void createActor (Actor actor);
-    public void delete (int index);
+    public void deleteActor (int index);
     public void updateMovie (Actor actor);
 
     Actor getActor(int index);
