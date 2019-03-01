@@ -14,8 +14,8 @@
     <div class="coverField"> <img th:src="${movie.cover} " /> </div>
     <div class="titleField"> <p th:text="${movie.description} " > </p> </div>
     <div class="titleField"> <p th:text="${movie.duration} " > </p> </div>
-    <div class="titleField"> <p th:text="${movie.trailer} " > </p> </div>
 
+    <iframe width="400" height="300" th:src="${movie.trailer} " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 </div>
 
