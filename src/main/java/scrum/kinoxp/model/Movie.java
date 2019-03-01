@@ -75,7 +75,8 @@ public class Movie {
     @Override
     public String toString() {
         return "Movie{" +
-                "title='" + title + '\'' +
+                "id=" + id +
+                ", title='" + title + '\'' +
                 ", description='" + description + '\'' +
                 ", cover='" + cover + '\'' +
                 ", trailer='" + trailer + '\'' +
