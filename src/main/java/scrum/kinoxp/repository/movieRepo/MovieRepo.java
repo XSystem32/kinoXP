@@ -12,7 +12,7 @@ public interface MovieRepo {
     public boolean createMovie (Movie movie);
     public boolean deleteMovie (int index);
     public boolean updateMovie (Movie movie);
-    Movie getMovie (String title);
+    Movie getMovie (int index);
     List<Movie> getMovies();
 
 

@@ -1,5 +1,6 @@
 package scrum.kinoxp.repository.movieRepo;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import scrum.kinoxp.model.Movie;
 
@@ -10,7 +11,9 @@ import java.util.List;
 public class MovieRepository implements MovieRepo {
 
 
-    List <Movie> movies = new ArrayList<>();
+
+    public List<Movie> movies = new ArrayList<Movie>();
+
 
     @Override
     public boolean createMovie(Movie movie) {
@@ -34,8 +37,11 @@ public class MovieRepository implements MovieRepo {
     }
 
     @Override
-    public Movie getMovie(String title) {
-        return getMovie(title);
+    public Movie getMovie(int index) {
+        for (Movie movie : movies) {
+            return getMovie(index);
+        }
+        return null;
     }
 
     @Override
