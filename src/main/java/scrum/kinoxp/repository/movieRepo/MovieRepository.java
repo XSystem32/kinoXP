@@ -3,11 +3,14 @@ package scrum.kinoxp.repository.movieRepo;
 import org.springframework.stereotype.Repository;
 import scrum.kinoxp.model.Movie;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Repository
 public class MovieRepository implements MovieRepo {
 
+
+    List <Movie> movies = new ArrayList<>();
 
     @Override
     public boolean createMovie(Movie movie) {
