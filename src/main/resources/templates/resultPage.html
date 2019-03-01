@@ -7,9 +7,8 @@
 
 </head>
 <body>
-<div id="logo">KinoXP</div>
 
-<div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
+<div id="header" th:insert="/blocks/header :: header ">MENU HERE :D</div>
 
 <div th:each="movie: ${movies}"  class="movieWrapper">
     <div class="titleField"><a th:href="@{/displayMovie(id=${movie.id})}"> <p th:text="${movie.title}"/> </a></div>

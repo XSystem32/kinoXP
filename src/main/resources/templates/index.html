@@ -7,9 +7,9 @@
 </head>
 <body>
 
-<div id="logo">KinoXP</div>
 
-<div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
+
+<div id="header" th:insert="/blocks/header :: header">MENU HERE :D</div>
 
 <div th:each="movie: ${movies}"  class="movieWrapper">
     <div class="titleField"><a th:href="@{/displayMovie(id=${movie.id})}"> <p th:text="${movie.title}"/> </a></div>
@@ -17,14 +17,7 @@
 </div>
 
 
-<div class="topnav">
-    <div class="search-container">
-        <form th:action="@{/searchMovie}" method="POST">
-            <input type="text" name="search" id="search" th:value="${search}"/>
-            <input type="submit" value="Search"/>
-        </form>
-    </div>
-</div>
+
 
 
 </body>
