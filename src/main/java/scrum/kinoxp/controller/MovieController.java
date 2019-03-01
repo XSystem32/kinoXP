@@ -48,10 +48,13 @@ public class MovieController {
     }
 
     @RequestMapping(value = "/searchMovie", method = RequestMethod.POST)
-    public String searchMovie(@RequestParam (value = "results", required = false) String title, Model model) {
-        model.addAttribute("result", movieService.searchMovie(title));
+    public String searchMovie(@RequestParam(name="search") String search, Model model){
+        model.addAttribute("movies",movieService.searchMovie(search) );
         return RESULT;
     }
+
+
+
 
 
 
