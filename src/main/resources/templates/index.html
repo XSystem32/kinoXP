@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>KinoXP</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/css/beautiful.css}" />
+</head>
+<body>
+
+<div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
+
+<div th:each="movie: ${movies}" >
+    Hallelujah
+</div>
+
+</body>
+</html>

@@ -1,5 +1,6 @@
 package scrum.kinoxp.service;
 
+
 import org.springframework.beans.factory.annotation.Autowired;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.repository.movieRepo.MovieRepo;
