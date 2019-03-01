@@ -11,9 +11,20 @@ import java.util.List;
 public class MovieRepository implements MovieRepo {
 
 
+        public List<Movie> movies = new ArrayList<Movie>();
 
-    public List<Movie> movies = new ArrayList<Movie>();
 
+    public void repoInit() {
+        Movie LOTR = new Movie(1,"Lort","asdasdasd","https://www.syfy.com/sites/syfy/files/styles/1200x680/public/wire/legacy/LOTR.png","https://www.youtube.com/watch?v=Pki6jbSbXIY","2:22");
+        movies.add(LOTR);
+        movies.add(LOTR);
+        movies.add(LOTR);
+        movies.add(LOTR);
+        movies.add(LOTR);
+        Movie movie = new Movie();
+
+
+    }
 
     @Override
     public boolean createMovie(Movie movie) {
@@ -38,10 +49,8 @@ public class MovieRepository implements MovieRepo {
 
     @Override
     public Movie getMovie(int index) {
-        for (Movie movie : movies) {
-            return getMovie(index);
-        }
-        return null;
+
+        return movies.get(index);
     }
 
     @Override
