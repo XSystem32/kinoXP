@@ -7,10 +7,13 @@
 </head>
 <body>
 
+<div id="logo">KinoXP</div>
+
 <div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
 
-<div th:each="movie: ${movies}" >
-    Hallelujah
+<div th:each="movie: ${movies}"  class="movieWrapper">
+    <div class="coverField">picture goes here</div>
+    <div class="titleField">Title goes here</div>
 </div>
 
 </body>
