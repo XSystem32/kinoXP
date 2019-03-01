@@ -2,6 +2,7 @@ package scrum.kinoxp.model;
 
 public class Movie {
 
+    private int id;
     private String title;
     private String description;
     private String cover;
@@ -10,6 +11,22 @@ public class Movie {
 
 
     public Movie() {
+    }
+
+    public Movie(int id, String title, String description, String cover, String trailer, String duration) {
+        this.title = title;
+        this.description = description;
+        this.cover = cover;
+        this.trailer = trailer;
+        this.duration = duration;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getTitle() {
