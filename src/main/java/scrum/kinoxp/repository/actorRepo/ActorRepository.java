@@ -7,18 +7,18 @@ import java.util.List;
 public class ActorRepository implements ActorRepo{
 
     @Override
-    public void createActor(Actor actor) {
-
+    public boolean createActor(Actor actor) {
+        return false;
     }
 
     @Override
-    public void deleteActor(int index) {
-
+    public boolean deleteActor(int index) {
+        return false;
     }
 
     @Override
-    public void updateMovie(Actor actor) {
-
+    public boolean updateMovie(Actor actor) {
+        return false;
     }
 
     @Override
