@@ -10,8 +10,13 @@
 <div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
 
 <div>
-    <div class="coverField"> <img th:src="${movie.cover} " /> </div>
     <div class="titleField"> <p th:text="${movie.title}"/> </div>
+    <div class="coverField"> <img th:src="${movie.cover} " /> </div>
+    <div class="titleField"> <p th:text="${movie.description} " > </p> </div>
+    <div class="titleField"> <p th:text="${movie.duration} " > </p> </div>
+    <div class="titleField"> <p th:text="${movie.trailer} " > </p> </div>
+
+
 </div>
 
 
