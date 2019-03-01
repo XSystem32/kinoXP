@@ -18,13 +18,13 @@
     padding: 5px;
 }
 .coverField {
-    height: 120px;
-    width: 120px;
-    background: brown;
+
+    background: #393939;
 }
 .coverField img {
     width: 120px;
-    height: 120px;
+    height: 180px;
+    margin: 0 auto;
 }
 .titleField {}
 .blockLink { display: block; }
