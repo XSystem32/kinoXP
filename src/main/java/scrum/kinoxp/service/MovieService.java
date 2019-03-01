@@ -41,6 +41,6 @@ public class MovieService implements MovieRepo {
 
     @Override
     public List<Movie> getMovies() {
-        return null;
+        return movieRepo.getMovies();
     }
 }
