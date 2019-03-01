@@ -9,10 +9,10 @@ import java.util.List;
 @Repository
 public interface MovieRepo {
 
-    public void createMovie (Movie movie);
-    public void deleteMovie (int index);
-    public void updateMovie (Movie movie);
-    Movie getMovie (int index);
+    public boolean createMovie (Movie movie);
+    public boolean deleteMovie (int index);
+    public boolean updateMovie (Movie movie);
+    Movie getMovie (String title);
     List<Movie> getMovies();
 
 
