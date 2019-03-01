@@ -12,8 +12,9 @@
 <div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
 
 <div th:each="movie: ${movies}"  class="movieWrapper">
-    <div class="coverField"><a th:href="@{/displayMovie(id=${movie.id})}" class="blockLink"> <img th:src="${movie.cover} " /> </a></div>
     <div class="titleField"><a th:href="@{/displayMovie(id=${movie.id})}"> <p th:text="${movie.title}"/> </a></div>
+
+    <div class="coverField"><a th:href="@{/displayMovie(id=${movie.id})}" class="blockLink"> <img th:src="${movie.cover} " /> </a></div>
 </div>
 
 </body>
