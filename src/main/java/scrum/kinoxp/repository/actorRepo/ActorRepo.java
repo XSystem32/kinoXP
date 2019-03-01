@@ -8,9 +8,9 @@ import java.util.List;
 @Repository
 public interface ActorRepo {
 
-    public void createActor (Actor actor);
-    public void deleteActor (int index);
-    public void updateMovie (Actor actor);
+    public boolean createActor (Actor actor);
+    public boolean deleteActor (int index);
+    public boolean updateMovie (Actor actor);
 
     Actor getActor(int index);
     List<Actor> getActors();
