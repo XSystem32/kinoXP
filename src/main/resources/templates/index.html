@@ -17,5 +17,16 @@
     <div class="coverField"><a th:href="@{/displayMovie(id=${movie.id})}" class="blockLink"> <img th:src="${movie.cover} " /> </a></div>
 </div>
 
+
+<div class="topnav">
+    <div class="search-container">
+        <form th:action="@{/searchMovie}" method="POST">
+            <input type="text" name="search" id="search" th:value="${search}"/>
+            <input type="submit" value="Search"/>
+        </form>
+    </div>
+</div>
+
+
 </body>
 </html>

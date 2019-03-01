@@ -26,6 +26,8 @@ public class MovieController {
     private final String INDEX = "index";
     private final String REDIRECT_INDEX = "redirect:/";
     private final String DISPLAY = "displayMovie";
+    private final String RESULT = "resultPage";
+    private final String SEARCH = "searchMovie";
 
 
     @GetMapping("/")
@@ -43,6 +45,12 @@ public class MovieController {
         Movie movie = movieService.getMovie(Integer.parseInt(id));
         model.addAttribute("movie", movie);
         return DISPLAY;
+    }
+
+    @RequestMapping(value = "/searchMovie", method = RequestMethod.POST)
+    public String searchMovie(@RequestParam (value = "results", required = false) String title, Model model) {
+        model.addAttribute("result", movieService.searchMovie(title));
+        return RESULT;
     }
 
 
