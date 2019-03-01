@@ -34,8 +34,8 @@ public class MovieService implements MovieRepo {
     }
 
     @Override
-    public Movie getMovie(String title) {
-        return movieRepo.getMovie(title);
+    public Movie getMovie(int index) {
+        return movieRepo.getMovie(index);
     }
 
 
