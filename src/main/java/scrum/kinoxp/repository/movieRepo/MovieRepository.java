@@ -50,8 +50,12 @@ public class MovieRepository implements MovieRepo {
 
     @Override
     public Movie getMovie(int index) {
-
-        return movies.get(index);
+        for (Movie m : movies) {
+            if (m.getId() == index) {
+                return m;
+            }
+        }
+        return new Movie();
     }
 
     @Override
