@@ -1,7 +1,6 @@
 package scrum.kinoxp.repository.movieRepo;
 
 import org.springframework.stereotype.Repository;
-import org.springframework.ui.Model;
 import scrum.kinoxp.model.Movie;
 
 import java.util.List;
@@ -15,5 +14,6 @@ public interface MovieRepo {
     Movie getMovie (int index);
     List<Movie> getMovies();
 
+    public List<Movie> searchMovie (String title);
 
 }

@@ -1,6 +1,5 @@
 package scrum.kinoxp.repository.movieRepo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import scrum.kinoxp.model.Movie;
 
@@ -62,4 +61,17 @@ public class MovieRepository implements MovieRepo {
     public List<Movie> getMovies() {
         return movies;
     }
+
+
+    @Override
+    public List<Movie> searchMovie(String title) {
+        List<Movie> results = new ArrayList<>();
+        for (int i = 0; i < movies.size(); i++) {
+            if (movies.get(i).getTitle().equals(title)) {
+                results.add(movies.get(i));
+            }
+        }
+        return results;
+    }
+
 }

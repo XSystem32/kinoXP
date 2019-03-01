@@ -43,4 +43,8 @@ public class MovieService implements MovieRepo {
     public List<Movie> getMovies() {
         return movieRepo.getMovies();
     }
+
+    public List<Movie> searchMovie (String title) {
+        return movieRepo.searchMovie(title);
+    }
 }
