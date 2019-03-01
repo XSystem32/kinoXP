@@ -2,44 +2,54 @@ package scrum.kinoxp.model;
 
 public class Movie {
 
-    private String movieName;
-    private String movieDescritpion;
-    private int movieAge;
-    private String movieCover;
+    private String title;
+    private String description;
+    private String cover;
+    private String trailer;
+    private String duration;
 
 
     public Movie() {
     }
 
-    public String getMovieName() {
-        return movieName;
+    public String getTitle() {
+        return title;
     }
 
-    public void setMovieName(String movieName) {
-        this.movieName = movieName;
+    public void setTitle(String title) {
+        this.title = title;
     }
 
-    public String getMovieDescritpion() {
-        return movieDescritpion;
+    public String getDescription() {
+        return description;
     }
 
-    public void setMovieDescritpion(String movieDescritpion) {
-        this.movieDescritpion = movieDescritpion;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
-    public int getMovieAge() {
-        return movieAge;
+    public String getCover() {
+        return cover;
     }
 
-    public void setMovieAge(int movieAge) {
-        this.movieAge = movieAge;
+    public void setCover(String cover) {
+        this.cover = cover;
     }
 
-    public String getMovieCover() {
-        return movieCover;
+
+    public String getTrailer() {
+        return trailer;
     }
 
-    public void setMovieCover(String movieCover) {
-        this.movieCover = movieCover;
+    public void setTrailer(String trailer) {
+        this.trailer = trailer;
+    }
+
+    public String getDuration() {
+        return duration;
+    }
+
+    public void setDuration(String duration) {
+        this.duration = duration;
     }
 }
