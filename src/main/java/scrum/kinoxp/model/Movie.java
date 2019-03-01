@@ -52,4 +52,15 @@ public class Movie {
     public void setDuration(String duration) {
         this.duration = duration;
     }
+
+    @Override
+    public String toString() {
+        return "Movie{" +
+                "title='" + title + '\'' +
+                ", description='" + description + '\'' +
+                ", cover='" + cover + '\'' +
+                ", trailer='" + trailer + '\'' +
+                ", duration='" + duration + '\'' +
+                '}';
+    }
 }
