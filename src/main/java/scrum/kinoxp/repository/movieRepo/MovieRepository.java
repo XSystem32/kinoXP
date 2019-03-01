@@ -15,7 +15,7 @@ public class MovieRepository implements MovieRepo {
 
 
     public void repoInit() {
-        Movie LOTR = new Movie(1,"Lort","asdasdasd","https://www.syfy.com/sites/syfy/files/styles/1200x680/public/wire/legacy/LOTR.png","https://www.youtube.com/watch?v=Pki6jbSbXIY","2:22");
+        Movie LOTR = new Movie(1,"Lotr","asdasdasd","https://www.syfy.com/sites/syfy/files/styles/1200x680/public/wire/legacy/LOTR.png","https://www.youtube.com/watch?v=Pki6jbSbXIY","2:22");
         movies.add(LOTR);
         movies.add(LOTR);
         movies.add(LOTR);
@@ -55,6 +55,6 @@ public class MovieRepository implements MovieRepo {
 
     @Override
     public List<Movie> getMovies() {
-        return getMovies();
+        return movies;
     }
 }

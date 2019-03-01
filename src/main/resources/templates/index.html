@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <title>KinoXP</title>
-    <link rel="stylesheet" type="text/css" th:href="@{/css/beautiful.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/beautiful.css}" />
 </head>
 <body>
 
@@ -12,8 +12,8 @@
 <div id="menu" th:insert="/blocks/menu :: menu ">MENU HERE :D</div>
 
 <div th:each="movie: ${movies}"  class="movieWrapper">
-    <div class="coverField">picture goes here</div>
-    <div class="titleField">Title goes here</div>
+    <div class="coverField"><a th:href="@{/displayMovie(id=${movie.id})}" class="blockLink"> <img th:src="${movie.cover} " /> </a></div>
+    <div class="titleField"><a th:href="@{/displayMovie(id=${movie.id})}"> <p th:text="${movie.title}"/> </a></div>
 </div>
 
 </body>
