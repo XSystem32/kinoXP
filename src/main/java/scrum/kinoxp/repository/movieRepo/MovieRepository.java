@@ -22,6 +22,7 @@ public class MovieRepository implements MovieRepo {
 
     @Override
     public boolean createMovie(Movie movie) {
+        movies.add(movie);
         return false;
     }
 
