@@ -1,5 +1,7 @@
 package scrum.kinoxp.model;
 
+import java.util.List;
+
 public class Movie {
 
     private int id;
@@ -8,18 +10,20 @@ public class Movie {
     private String cover;
     private String trailer;
     private String duration;
+    private List<Show> shows;
 
 
     public Movie() {
     }
 
-    public Movie(int id, String title, String description, String cover, String trailer, String duration) {
+    public Movie(int id, String title, String description, String cover, String trailer, String duration, List<Show> shows) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.cover = cover;
         this.trailer = trailer;
         this.duration = duration;
+        this.shows = shows;
     }
 
 
@@ -72,6 +76,14 @@ public class Movie {
         this.duration = duration;
     }
 
+    public List<Show> getShows() {
+        return shows;
+    }
+
+    public void setShows(List<Show> shows) {
+        this.shows = shows;
+    }
+
     @Override
     public String toString() {
         return "Movie{" +
@@ -81,6 +93,7 @@ public class Movie {
                 ", cover='" + cover + '\'' +
                 ", trailer='" + trailer + '\'' +
                 ", duration='" + duration + '\'' +
+                ", shows=" + shows +
                 '}';
     }
 }

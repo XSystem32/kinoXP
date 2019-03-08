@@ -16,16 +16,7 @@ public class ShowRepository implements ShowRepo{
     @Autowired
     MovieRepo movieRepo;
 
-    List<Movie> movies = movieRepo.getMovies();
 
-    List<Show> shows = new ArrayList<>();
-
-    public void repoinit(){
-
-        shows.add(new Show(1, new ArrayList<Booking>(), movies.get(1),"210", new ArrayList<Seat>()));
-        shows.add(new Show(1, new ArrayList<Booking>(), movies.get(1),"510", new ArrayList<Seat>()));
-        shows.add(new Show(1, new ArrayList<Booking>(), movies.get(1),"120", new ArrayList<Seat>()));
-    }
     @Override
     public boolean createShow(Show show) {
         return false;

@@ -6,17 +6,15 @@ public class Show {
 
     private int id;
     private List<Booking> bookings;
-    private Movie movie;
     private String date_time;
     private List<Seat> seats;
 
     public Show() {
     }
 
-    public Show(int id, List<Booking> bookings, Movie movie, String date_time, List<Seat> seats) {
+    public Show(int id, List<Booking> bookings, String date_time, List<Seat> seats) {
         this.id = id;
         this.bookings = bookings;
-        this.movie = movie;
         this.date_time = date_time;
         this.seats = seats;
     }
@@ -37,13 +35,7 @@ public class Show {
         this.bookings = bookings;
     }
 
-    public Movie getMovie() {
-        return movie;
-    }
 
-    public void setMovie(Movie movie) {
-        this.movie = movie;
-    }
 
     public String getDate_time() {
         return date_time;
@@ -66,7 +58,6 @@ public class Show {
         return "Show{" +
                 "id=" + id +
                 ", bookings=" + bookings +
-                ", movie=" + movie +
                 ", date_time='" + date_time + '\'' +
                 ", seats=" + seats +
                 '}';
