@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Create Movie</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/beautiful.css}" />
+</head>
+<body>
+
+<div id="header" th:insert="/blocks/header :: header">MENU HERE :D</div>
+
+<div th:each="movie: ${movies}"  class="movieWrapper">
+    <div class="titleField"><a th:href="@{/displayMovie(id=${movie.id})}"> <p th:text="${movie.title}"/> </a></div>
+    <div class="coverField"><a th:href="@{/displayMovie(id=${movie.id})}" class="blockLink"> <img th:src="${movie.cover} " /> </a></div>
+</div>
+
+<form method="post" action="#" th:action="@{/updateMovieSubmit}" th:object="${movie}"  >
+    <input type="hidden" th:field="*{id}">
+    <input type="text" placeholder="title" th:field="*{title}">
+    <input type="text" placeholder="duration" th:field="*{duration}" />
+    <input type="text" placeholder="cover" th:field="*{cover}" />
+    <input type="text" placeholder="trailer" th:field="*{trailer}" />
+    <input type="text" placeholder="description" th:field="*{description}" />
+
+    <input type="submit" value="Submit">
+
+
+
+
+</form>
+
+
+
+</body>
+</html>
