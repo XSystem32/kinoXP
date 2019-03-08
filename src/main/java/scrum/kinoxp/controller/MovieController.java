@@ -29,7 +29,7 @@ public class MovieController {
     private final String RESULT = "resultPage";
     private final String SEARCH = "searchMovie";
     private final String CREATE_MOVIE = "createMovie";
-
+    private final String DELETE_MOVIE = "deleteMovie";
 
     @GetMapping("/")
     public String index(Model model){
@@ -63,6 +63,8 @@ public class MovieController {
         movieService.createMovie(movie);
         return REDIRECT_INDEX;
     }
+
+
 
 
 }

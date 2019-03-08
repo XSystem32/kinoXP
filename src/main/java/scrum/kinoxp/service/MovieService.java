@@ -21,8 +21,8 @@ public class MovieService implements MovieRepo {
     }
 
     @Override
-    public boolean deleteMovie(int index) {
-        movieRepo.deleteMovie(index);
+    public boolean deleteMovie(int id) {
+        movieRepo.deleteMovie(id);
         return true;
     }
 

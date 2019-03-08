@@ -4,6 +4,7 @@ import org.springframework.stereotype.Repository;
 import scrum.kinoxp.model.Movie;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 @Repository
@@ -32,7 +33,13 @@ public class MovieRepository implements MovieRepo {
     }
 
     @Override
-    public boolean deleteMovie(int index) {
+    public boolean deleteMovie(int id) {
+        Iterator<Movie> iterator = movies.iterator();
+        while (iterator.hasNext()) {
+            if (iterator.next().equals(this)) {
+                movies.remove(index);
+            }
+        }
         return false;
     }
 
