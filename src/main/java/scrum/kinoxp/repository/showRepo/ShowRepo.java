@@ -6,6 +6,7 @@ import scrum.kinoxp.model.Show;
 
 import java.util.List;
 
+
 @Repository
 public interface ShowRepo {
     public boolean createShow (Show show);
