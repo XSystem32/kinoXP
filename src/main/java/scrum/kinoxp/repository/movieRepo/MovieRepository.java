@@ -61,6 +61,8 @@ public class MovieRepository implements MovieRepo {
     @Override
     public List<Movie> searchMovie(String title) {
 
+        title = title.toLowerCase();
+
         List<Movie> results = new ArrayList<>();
 
         for (Movie m : movies) {
