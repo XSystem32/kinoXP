@@ -58,9 +58,10 @@ public class MovieRepository implements MovieRepo {
                 break;
             }
         }
-
-        movies.set(oldMovieIndex, movie);
-
+        if (oldMovieIndex != -1){
+            movies.set(oldMovieIndex, movie);
+            return true;
+        }
         return false;
     }
 
