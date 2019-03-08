@@ -28,9 +28,14 @@ public class MovieController {
     private final String DELETE_MOVIE = "deleteMovie";
     private final String UPDATE = "updateMovie";
 
+    @GetMapping("/test")
+    public String test(){
+        movieRepository.repoInit();
+        return REDIRECT_INDEX;
+    }
+
     @GetMapping("/")
     public String index(Model model){
-        movieRepository.repoInit();
 
         List<Movie> movies = movieService.getMovies();
         model.addAttribute("movies", movies);
