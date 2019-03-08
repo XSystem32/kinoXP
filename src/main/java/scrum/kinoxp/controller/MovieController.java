@@ -53,7 +53,10 @@ public class MovieController {
         model.addAttribute("movies",movieService.searchMovie(search) );
         return RESULT;
     }
-
+    @RequestMapping(value = "/createMovie", method = RequestMethod.GET)
+    public String createMovie(){
+        return CREATE_MOVIE;
+    }
 
 
 
