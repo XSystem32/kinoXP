@@ -16,7 +16,7 @@
     <div class="coverField"><a th:href="@{/displayMovie(id=${movie.id})}" class="blockLink"> <img th:src="${movie.cover} " /> </a></div>
 </div>
 
-<form method="post" action="#" th:action="@{/saveMovie}" th:object="${movie}"  >
+<form method="post" action="#" th:action="@{/submitMovie}" th:object="${movie}"  >
     <input type="text" placeholder="title" th:field="*{title}">
     <input type="text" placeholder="duration" th:field="*{duration}" />
     <input type="text" placeholder="cover" th:field="*{cover}" />

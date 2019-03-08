@@ -54,10 +54,15 @@ public class MovieController {
         return RESULT;
     }
     @RequestMapping(value = "/createMovie", method = RequestMethod.GET)
-    public String createMovie(){
+    public String createMovie(Model model){
+        model.addAttribute(new Movie());
         return CREATE_MOVIE;
     }
-
+    @RequestMapping(value = "/submitMovie", method = RequestMethod.POST)
+    public String submitMovie(Movie movie){
+        movieService.createMovie(movie);
+        return REDIRECT_INDEX;
+    }
 
 
 }
