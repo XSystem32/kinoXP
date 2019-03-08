@@ -34,13 +34,27 @@ public class MovieRepository implements MovieRepo {
 
     @Override
     public boolean deleteMovie(int id) {
+        int toBeDeleted = -1;
+        for (int i = 0; i < movies.size(); i++) {
+            if (movies.get(i).getId() == id){
+                toBeDeleted = i;
+                break;
+            }
+        }
+        if (toBeDeleted != -1) {
+            movies.remove(toBeDeleted);
+            return true;
+        }
+        return false;
+
+        /*
         Iterator<Movie> iterator = movies.iterator();
         while (iterator.hasNext()) {
             if (iterator.next().equals(this)) {
-                movies.remove(index);
+                movies.remove(id);
+                return true;
             }
-        }
-        return false;
+        }*/
     }
 
     @Override
