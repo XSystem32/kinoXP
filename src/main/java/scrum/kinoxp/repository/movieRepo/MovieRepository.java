@@ -57,14 +57,6 @@ public class MovieRepository implements MovieRepo {
     }
 
 
-    public boolean containsCaseInsensitive(Movie title, List<String> l){
-        for (String string : l){
-            if (string.equalsIgnoreCase(String.valueOf(title))){
-                return true;
-            }
-        }
-        return false;
-    }
 
     @Override
     public List<Movie> searchMovie(String title) {
@@ -72,7 +64,7 @@ public class MovieRepository implements MovieRepo {
         List<Movie> results = new ArrayList<>();
 
         for (Movie m : movies) {
-            if (m.getTitle().contains(title)) {
+            if (m.getTitle().toLowerCase().contains(title)) {
                 results.add(m);
             }
         }
