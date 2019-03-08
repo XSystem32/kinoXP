@@ -50,6 +50,17 @@ public class MovieRepository implements MovieRepo {
 
     @Override
     public boolean updateMovie(Movie movie) {
+        int oldMovieIndex = -1;
+
+        for (int i = 0; i < movies.size(); i++){
+            if (movie.getId() == movies.get(i).getId()) {
+                oldMovieIndex = i;
+                break;
+            }
+        }
+
+        movies.set(oldMovieIndex, movie);
+
         return false;
     }
 

@@ -3,10 +3,7 @@ package scrum.kinoxp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.repository.movieRepo.MovieRepository;
 import scrum.kinoxp.service.MovieService;
@@ -29,6 +26,7 @@ public class MovieController {
     private final String SEARCH = "searchMovie";
     private final String CREATE_MOVIE = "createMovie";
     private final String DELETE_MOVIE = "deleteMovie";
+    private final String UPDATE = "updateMovie";
 
     @GetMapping("/")
     public String index(Model model){
@@ -69,6 +67,17 @@ public class MovieController {
         return REDIRECT_INDEX;
     }
 
+    @RequestMapping(value = "/updateMovie", method = RequestMethod.GET)
+    public String updateMovie(@RequestParam(name = "id") String id, Model model) {
+        model.addAttribute("movie", movieService.getMovie(Integer.parseInt(id)));
+        return UPDATE;
+    }
+
+    @RequestMapping("/updateMovieSubmit")
+    public String updateMovie(@ModelAttribute Movie movie){
+        movieService.updateMovie(movie);
+        return REDIRECT_INDEX;
+    }
 
 
 }
