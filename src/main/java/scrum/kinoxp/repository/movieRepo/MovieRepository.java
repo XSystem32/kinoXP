@@ -46,15 +46,6 @@ public class MovieRepository implements MovieRepo {
             return true;
         }
         return false;
-
-        /*
-        Iterator<Movie> iterator = movies.iterator();
-        while (iterator.hasNext()) {
-            if (iterator.next().equals(this)) {
-                movies.remove(id);
-                return true;
-            }
-        }*/
     }
 
     @Override
