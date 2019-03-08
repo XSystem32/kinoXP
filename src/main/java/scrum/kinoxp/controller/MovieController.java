@@ -11,7 +11,6 @@ import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.repository.movieRepo.MovieRepository;
 import scrum.kinoxp.service.MovieService;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -64,6 +63,11 @@ public class MovieController {
         return REDIRECT_INDEX;
     }
 
+    @RequestMapping(value = "/deleteMovie", method = RequestMethod.GET)
+    public String deleteMovie(@RequestParam(name="id")String id ){
+        movieService.deleteMovie(Integer.parseInt(id));
+        return REDIRECT_INDEX;
+    }
 
 
 
