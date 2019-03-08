@@ -28,6 +28,7 @@ public class MovieController {
     private final String DISPLAY = "displayMovie";
     private final String RESULT = "resultPage";
     private final String SEARCH = "searchMovie";
+    private final String CREATE_MOVIE = "createMovie";
 
 
     @GetMapping("/")
@@ -53,8 +54,10 @@ public class MovieController {
         return RESULT;
     }
 
-
-
+    @RequestMapping(value = "/createMovie", method = RequestMethod.GET)
+    public String createMovie(){
+        return CREATE_MOVIE;
+    }
 
 
 
