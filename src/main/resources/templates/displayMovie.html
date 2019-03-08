@@ -4,22 +4,36 @@
     <meta charset="UTF-8">
     <title>KinoXP</title>
     <link rel="stylesheet" type="text/css" th:href="@{/beautiful.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/displayMovie.css}" />
 </head>
 <body>
 <div id="header" th:insert="/blocks/header :: header ">MENU HERE :D</div>
 
-<div>
-    <div class="titleField"> <p th:text="${movie.title}"></p> </div>
-    <div class="coverField"> <img th:src="${movie.cover} " /> </div>
-    <div class="titleField"> <p th:text="${movie.description} " > </p> </div>
-    <div class="titleField"> <p th:text="${movie.duration} " > </p> </div>
+<div id="wrapper">
+    <div id="leftContainer">
+        <div id="title"> <p th:text="${movie.title}"></p> </div>
+        <div> <p th:text="${movie.description} " > </p> </div>
+        <div> <p th:text="${movie.duration} " > </p> </div>
 
-    <div> <a th:href="@{/deleteMovie(id=${movie.id})}"> Delete </a> </div>
-    <div> <a th:href="@{/updateMovie(id=${movie.id})}"> Update </a> </div>
+        <div>
+            <iframe width="400" height="300" th:src="${movie.trailer} " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+        <div> <a th:href="@{/deleteMovie(id=${movie.id})}"> Delete </a> </div>
+        <div> <a th:href="@{/updateMovie(id=${movie.id})}"> Update </a> </div>
+
+    </div>
+
+    <div id="rightContainer">
+        <div id="cover" class="left"> <img th:src="${movie.cover} " /> </div>
+    </div>
 
 
-    <iframe width="400" height="300" th:src="${movie.trailer} " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
+
+
+
+
+<div class="clear">hello</div>
 </div>
 
 
