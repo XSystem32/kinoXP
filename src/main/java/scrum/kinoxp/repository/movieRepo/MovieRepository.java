@@ -26,9 +26,6 @@ public class MovieRepository implements MovieRepo {
     public void repoInit() {
 
         ArrayList<Show> shows = new ArrayList<>();
-        shows.add(new Show(1, new ArrayList<Booking>(),"02-10", new ArrayList<Seat>()));
-        shows.add(new Show(1, new ArrayList<Booking>(),"05-10", new ArrayList<Seat>()));
-        shows.add(new Show(1, new ArrayList<Booking>(),"01-20", new ArrayList<Seat>()));
 
         movies.add(new Movie(1,"Lotr","A meek Hobbit from the Shire and eight companions set out on a journey to destroy the powerful One Ring and save Middle-earth from the Dark Lord Sauron.","https://m.media-amazon.com/images/M/MV5BN2EyZjM3NzUtNWUzMi00MTgxLWI0NTctMzY4M2VlOTdjZWRiXkEyXkFqcGdeQXVyNDUzOTQ5MjY@._V1_SY999_CR0,0,673,999_AL_.jpg","https://www.imdb.com/videoembed/vi2073101337","2:22", shows));
         movies.add(new Movie(2,"StarWars","Two Jedi Knights escape a hostile blockade to find allies and come across a young boy who may bring balance to the Force, but the long dormant Sith resurface to claim their old glory.","https://m.media-amazon.com/images/M/MV5BYTRhNjcwNWQtMGJmMi00NmQyLWE2YzItODVmMTdjNWI0ZDA2XkEyXkFqcGdeQXVyNTAyODkwOQ@@._V1_SY999_SX666_AL_.jpg","https://www.imdb.com/videoembed/vi2143788569","1:53", shows));
