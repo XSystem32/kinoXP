@@ -39,8 +39,12 @@ public class ShowRepository implements ShowRepo{
     }
 
     @Override
-    public Show getShow(int index) {
-        return null;
+    public Show getShow(int id) {
+        for (Show s : shows) {
+            if  (s.getId() == id)
+                return s;
+        }
+        return new Show();
     }
 
     @Override
