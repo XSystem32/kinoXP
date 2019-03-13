@@ -5,6 +5,7 @@ import java.util.List;
 public class Show {
 
     private int id;
+    private Movie movie;
     private List<Booking> bookings;
     private String date_time;
     private Theater theater;
