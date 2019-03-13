@@ -18,6 +18,16 @@
         <div>
             <iframe width="400" height="300" th:src="${movie.trailer} " frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         </div>
+
+        <div th:each="show: ${movie.shows}">
+            <div> <p th:text="${show.id}" ></p> </div>
+            <div> <p th:text="${show.seats}" ></p> </div>
+            <div> <p th:text="${show.bookings}" ></p> </div>
+            <div> <p th:text="${show.date_time}" ></p> </div>
+
+        </div>
+
+
         <div> <a th:href="@{/deleteMovie(id=${movie.id})}"> Delete </a> </div>
         <div> <a th:href="@{/updateMovie(id=${movie.id})}"> Update </a> </div>
 

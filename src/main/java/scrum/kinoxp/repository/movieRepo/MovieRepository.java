@@ -7,6 +7,7 @@ import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.model.Seat;
 import scrum.kinoxp.model.Show;
 import scrum.kinoxp.repository.showRepo.ShowRepo;
+import scrum.kinoxp.repository.showRepo.ShowRepository;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,9 +15,9 @@ import java.util.List;
 @Repository
 public class MovieRepository implements MovieRepo {
     @Autowired
-    ShowRepo showRepo;
+    ShowRepository showRepo;
 
-    List<Show> shows = showRepo.getShows();
+
 
 
     public List<Movie> movies = new ArrayList<Movie>();
