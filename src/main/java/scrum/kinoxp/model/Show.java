@@ -5,16 +5,19 @@ import java.util.List;
 public class Show {
 
     private int id;
-    private Movie displayMovie;
+    private int movieId;
     private List<Booking> bookings;
     private String date_time;
     private Theater theater;
+    private int theatreId;
 
     public Show() {
     }
 
-    public Show(int id, Movie displayMovie, List<Booking> bookings, String date_time, Theater theater) {
-        this.displayMovie = displayMovie;
+
+
+    public Show(int id, int movieId, List<Booking> bookings, String date_time, Theater theater) {
+        this.movieId = movieId;
         this.id = id;
         this.bookings = bookings;
         this.date_time = date_time;
@@ -53,12 +56,20 @@ public class Show {
         this.theater = theater;
     }
 
-    public Movie getDisplayMovie() {
-        return displayMovie;
+    public int getMovieId() {
+        return movieId;
     }
 
-    public void setDisplayMovie(Movie movie) {
-        this.displayMovie = movie;
+    public void setMovieId(int movie) {
+        this.movieId = movie;
+    }
+
+    public int getTheatreId() {
+        return theatreId;
+    }
+
+    public void setTheatreId(int theatreId) {
+        this.theatreId = theatreId;
     }
 
     @Override

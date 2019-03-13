@@ -33,7 +33,7 @@ public class ShowController {
     }
 
     @RequestMapping(value = "/submitShow", method = RequestMethod.POST)
-    public String submitShow(Show show){
+    public String submitShow(@ModelAttribute Show show){
         showService.createShow(show);
         return REDIRECT_INDEX;
     }

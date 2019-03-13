@@ -4,15 +4,21 @@ package scrum.kinoxp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scrum.kinoxp.model.Movie;
+import scrum.kinoxp.model.Show;
 import scrum.kinoxp.repository.movieRepo.MovieRepo;
 import scrum.kinoxp.repository.movieRepo.MovieRepository;
+import scrum.kinoxp.repository.showRepo.ShowRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 @Service
 public class MovieService implements MovieRepo {
 
     @Autowired
     MovieRepository movieRepo;
+
+    @Autowired
+    ShowRepository showRepository;
 
     @Override
     public boolean createMovie(Movie movie) {
@@ -35,7 +41,12 @@ public class MovieService implements MovieRepo {
 
     @Override
     public Movie getMovie(int id) {
-        return movieRepo.getMovie(id);
+        Movie movie = movieRepo.getMovie(id);
+        ArrayList<Show> shows = showRepository.getShowsByMovieId(id);
+
+        movie.setShows(shows);
+        return movie;
+
     }
 
 

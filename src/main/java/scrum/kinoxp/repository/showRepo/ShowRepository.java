@@ -12,11 +12,8 @@ import java.util.List;
 public class ShowRepository implements ShowRepo{
 
     private ArrayList<Show> shows = new ArrayList<>();
-    private ArrayList<Booking> bookings = new ArrayList<>();
     private ArrayList<Theater> theaters = new ArrayList<>();
 
-    private Movie LOTR = new Movie();
-    private Movie Hellboy = new Movie();
 
     public void repoInit() {
         theaters.add(new Theater(1,20,12)) ;
@@ -47,6 +44,16 @@ public class ShowRepository implements ShowRepo{
     @Override
     public List<Show> getShows() {
         return shows;
+    }
+
+    public ArrayList<Show> getShowsByMovieId(int id) {
+        ArrayList<Show> result = new ArrayList<>();
+
+        for (Show s: shows) {
+            if (s.getMovieId() == id)
+                result.add(s);
+        }
+        return result;
     }
 
     public ArrayList<Theater> getTheaters() {
