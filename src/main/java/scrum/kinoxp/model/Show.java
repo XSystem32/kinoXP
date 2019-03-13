@@ -13,7 +13,8 @@ public class Show {
     public Show() {
     }
 
-    public Show(int id, List<Booking> bookings, String date_time, Theater theater) {
+    public Show(int id, Movie movie, List<Booking> bookings, String date_time, Theater theater) {
+        this.movie = movie;
         this.id = id;
         this.bookings = bookings;
         this.date_time = date_time;
@@ -36,7 +37,13 @@ public class Show {
         this.bookings = bookings;
     }
 
+    public Movie getMovie() {
+        return movie;
+    }
 
+    public void setMovie(Movie movie) {
+        this.movie = movie;
+    }
 
     public String getDate_time() {
         return date_time;
@@ -58,8 +65,10 @@ public class Show {
     public String toString() {
         return "Show{" +
                 "id=" + id +
+                ", movie=" + movie +
                 ", bookings=" + bookings +
                 ", date_time='" + date_time + '\'' +
+                ", theater=" + theater +
                 '}';
     }
 }
