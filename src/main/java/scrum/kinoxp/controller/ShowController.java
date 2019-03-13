@@ -24,9 +24,9 @@ public class ShowController {
     MovieService movieService;
 
     @RequestMapping(value = "/createShow", method = RequestMethod.GET)
-    public String createMovie(Model showModel, Model movieModel){
-        movieModel.addAttribute("movies", movieService.getMovies());
-        showModel.addAttribute("show", new Show());
+    public String createMovie(Model model){
+        model.addAttribute("movies", movieService.getMovies());
+        model.addAttribute("show", new Show());
         return CREATE_SHOW;
     }
 
