@@ -36,8 +36,8 @@ public class ShowService implements ShowRepo {
     }
 
     @Override
-    public Show getShow(int index) {
-        return null;
+    public Show getShow(int id) {
+        return showRepo.getShow(id);
     }
 
     @Override
