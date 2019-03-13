@@ -3,7 +3,7 @@ package scrum.kinoxp.service;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import scrum.kinoxp.model.Show;
-import scrum.kinoxp.model.Theater;
+import scrum.kinoxp.model.Theatre;
 import scrum.kinoxp.repository.showRepo.ShowRepo;
 import scrum.kinoxp.repository.showRepo.ShowRepository;
 
@@ -40,7 +40,7 @@ public class ShowService implements ShowRepo {
     public Show getShow(int id) {
 
         Show show = showRepo.getShow(id);
-        show.setTheater(getTheatreById(show.getTheatreId()));
+        show.setTheatre(getTheatreById(show.getTheatreId()));
         show.generateSeats();
         System.out.println(show.getSeats());
         return show;
@@ -51,7 +51,7 @@ public class ShowService implements ShowRepo {
         return null;
     }
 
-    public Theater getTheatreById(int id) {
+    public Theatre getTheatreById(int id) {
         return showRepo.getTheatreById(id);
     }
 }

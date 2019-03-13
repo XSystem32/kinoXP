@@ -1,9 +1,7 @@
 package scrum.kinoxp.repository.showRepo;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import scrum.kinoxp.model.*;
-import scrum.kinoxp.repository.movieRepo.MovieRepo;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +10,13 @@ import java.util.List;
 public class ShowRepository implements ShowRepo{
 
     private ArrayList<Show> shows = new ArrayList<>();
-    private ArrayList<Theater> theaters = new ArrayList<>();
+    private ArrayList<Theatre> theatres = new ArrayList<>();
     private int lastId = 0;
 
 
     public void repoInit() {
-        theaters.add(new Theater(1,20,12)) ;
-        theaters.add(new Theater(2, 25,16));
+        theatres.add(new Theatre(1,20,12)) ;
+        theatres.add(new Theatre(2, 25,16));
     }
 
     @Override
@@ -62,20 +60,20 @@ public class ShowRepository implements ShowRepo{
         return result;
     }
 
-    public ArrayList<Theater> getTheaters() {
-        return theaters;
+    public ArrayList<Theatre> getTheatres() {
+        return theatres;
     }
 
-    public void setTheaters(ArrayList<Theater> theaters) {
-        this.theaters = theaters;
+    public void setTheatres(ArrayList<Theatre> theatres) {
+        this.theatres = theatres;
     }
 
-    public Theater getTheatreById(int id) {
-        for (Theater t: theaters) {
+    public Theatre getTheatreById(int id) {
+        for (Theatre t: theatres) {
             if(t.getId() == id)
                 return t;
         }
-        return new Theater();
+        return new Theatre();
     }
 
     private int nextId() {

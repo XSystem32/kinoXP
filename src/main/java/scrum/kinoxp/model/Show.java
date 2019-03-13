@@ -9,7 +9,7 @@ public class Show {
     private int movieId;
     private List<Booking> bookings;
     private String date_time;
-    private Theater theater;
+    private Theatre theatre;
     private int theatreId;
     private ArrayList<Seat> seats = new ArrayList<>();
 
@@ -18,12 +18,12 @@ public class Show {
 
 
 
-    public Show(int id, int movieId, List<Booking> bookings, String date_time, Theater theater) {
+    public Show(int id, int movieId, List<Booking> bookings, String date_time, Theatre theatre) {
         this.movieId = movieId;
         this.id = id;
         this.bookings = bookings;
         this.date_time = date_time;
-        this.theater = theater;
+        this.theatre = theatre;
     }
 
     public int getId() {
@@ -50,12 +50,12 @@ public class Show {
         this.date_time = date_time;
     }
 
-    public Theater getTheater() {
-        return theater;
+    public Theatre getTheatre() {
+        return theatre;
     }
 
-    public void setTheater(Theater theater) {
-        this.theater = theater;
+    public void setTheatre(Theatre theatre) {
+        this.theatre = theatre;
     }
 
     public int getMovieId() {
@@ -83,7 +83,7 @@ public class Show {
     }
 
     public void generateSeats(){
-        int amountOfSeats = theater.getRowLength() * theater.getAmountOfRows();
+        int amountOfSeats = theatre.getRowLength() * theatre.getAmountOfRows();
 
         for (int i = 0; i < amountOfSeats; i++){
             seats.add(new Seat(i, false));
@@ -96,7 +96,7 @@ public class Show {
                 "id=" + id +
                 ", bookings=" + bookings +
                 ", date_time='" + date_time + '\'' +
-                ", theater=" + theater +
+                ", theatre=" + theatre +
                 '}';
     }
 }

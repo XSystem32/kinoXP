@@ -2,16 +2,16 @@ package scrum.kinoxp.model;
 
 import java.util.ArrayList;
 
-public class Theater {
+public class Theatre {
     private int id;
     private int rowLength;
     private int amountOfRows;
 
 
-    public Theater() {
+    public Theatre() {
     }
 
-    public Theater(int id, int rowLength, int amountOfRows) {
+    public Theatre(int id, int rowLength, int amountOfRows) {
         this.id = id;
         this.rowLength = rowLength;
         this.amountOfRows = amountOfRows;
@@ -45,7 +45,7 @@ public class Theater {
 
     @Override
     public String toString() {
-        return "Theater{" +
+        return "Theatre{" +
                 "id=" + id +
                 ", rowLength=" + rowLength +
                 ", amountOfRows=" + amountOfRows +
