@@ -2,15 +2,17 @@ package scrum.kinoxp.model;
 
 public class Theater {
     private int id;
-    private int amountOfSeats;
+    private int rowLength;
+    private int amountOfRows;
 
 
     public Theater() {
     }
 
-    public Theater(int id, int amountOfSeats) {
+    public Theater(int id, int rowLength, int amountOfRows) {
         this.id = id;
-        this.amountOfSeats = amountOfSeats;
+        this.rowLength = rowLength;
+        this.amountOfRows = amountOfRows;
     }
 
     public int getId() {
@@ -21,19 +23,29 @@ public class Theater {
         this.id = id;
     }
 
-    public int getAmountOfSeats() {
-        return amountOfSeats;
+
+    public int getRowLength() {
+        return rowLength;
     }
 
-    public void setAmountOfSeats(int amountOfSeats) {
-        this.amountOfSeats = amountOfSeats;
+    public void setRowLength(int rowLength) {
+        this.rowLength = rowLength;
+    }
+
+    public int getAmountOfRows() {
+        return amountOfRows;
+    }
+
+    public void setAmountOfRows(int amountOfRows) {
+        this.amountOfRows = amountOfRows;
     }
 
     @Override
     public String toString() {
         return "Theater{" +
                 "id=" + id +
-                ", amountOfSeats=" + amountOfSeats +
+                ", rowLength=" + rowLength +
+                ", amountOfRows=" + amountOfRows +
                 '}';
     }
 }
