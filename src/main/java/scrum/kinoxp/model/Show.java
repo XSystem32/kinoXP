@@ -7,14 +7,16 @@ public class Show {
     private int id;
     private List<Booking> bookings;
     private String date_time;
+    private Theater theater;
 
     public Show() {
     }
 
-    public Show(int id, List<Booking> bookings, String date_time) {
+    public Show(int id, List<Booking> bookings, String date_time, Theater theater) {
         this.id = id;
         this.bookings = bookings;
         this.date_time = date_time;
+        this.theater = theater;
     }
 
     public int getId() {
@@ -41,6 +43,14 @@ public class Show {
 
     public void setDate_time(String date_time) {
         this.date_time = date_time;
+    }
+
+    public Theater getTheater() {
+        return theater;
+    }
+
+    public void setTheater(Theater theater) {
+        this.theater = theater;
     }
 
     @Override
