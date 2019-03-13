@@ -11,19 +11,16 @@ import java.util.List;
 @Repository
 public class ShowRepository implements ShowRepo{
 
-    ArrayList<Show> shows = new ArrayList<>();
-    ArrayList<Booking> bookings = new ArrayList<>();
+    private ArrayList<Show> shows = new ArrayList<>();
+    private ArrayList<Booking> bookings = new ArrayList<>();
+    private ArrayList<Theater> theaters = new ArrayList<>();
 
-    Movie LOTR = new Movie();
-    Movie Hellboy = new Movie();
+    private Movie LOTR = new Movie();
+    private Movie Hellboy = new Movie();
 
-    public void addShow () {
-
-        Theater bigTheater = new Theater(1,20,12);
-        Theater littleTheater = new Theater(2, 25,16);
-
-        shows.add(new Show (1, LOTR, bookings, "12-03-2019", littleTheater));
-        shows.add(new Show (2, Hellboy, bookings, "23-06-2019", bigTheater));
+    public void repoInit() {
+        theaters.add(new Theater(1,20,12)) ;
+        theaters.add(new Theater(2, 25,16));
     }
 
     @Override
@@ -50,5 +47,13 @@ public class ShowRepository implements ShowRepo{
     @Override
     public List<Show> getShows() {
         return shows;
+    }
+
+    public ArrayList<Theater> getTheaters() {
+        return theaters;
+    }
+
+    public void setTheaters(ArrayList<Theater> theaters) {
+        this.theaters = theaters;
     }
 }

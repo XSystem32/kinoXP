@@ -21,6 +21,10 @@ public class ShowService implements ShowRepo {
         return true;
     }
 
+    public void repoInit () {
+        showRepo.repoInit();
+    }
+
     @Override
     public boolean deleteShow(int index) {
         return false;

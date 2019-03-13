@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.*;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.repository.movieRepo.MovieRepository;
 import scrum.kinoxp.service.MovieService;
+import scrum.kinoxp.service.ShowService;
 
 import java.util.List;
 
@@ -18,6 +19,9 @@ public class MovieController {
 
     @Autowired
     MovieRepository movieRepository;
+
+    @Autowired
+    ShowService showService;
 
     private final String INDEX = "index";
     private final String REDIRECT_INDEX = "redirect:/";
@@ -31,6 +35,7 @@ public class MovieController {
     @GetMapping("/test")
     public String test(){
         movieRepository.repoInit();
+        showService.repoInit();
         return REDIRECT_INDEX;
     }
 
