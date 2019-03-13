@@ -13,8 +13,8 @@ public class Show {
     public Show() {
     }
 
-    public Show(int id, Movie movie, List<Booking> bookings, String date_time, Theater theater) {
-        this.displayMovie = movie;
+    public Show(int id, Movie displayMovie, List<Booking> bookings, String date_time, Theater theater) {
+        this.displayMovie = displayMovie;
         this.id = id;
         this.bookings = bookings;
         this.date_time = date_time;

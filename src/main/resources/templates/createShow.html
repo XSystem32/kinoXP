@@ -10,7 +10,9 @@
 <div id="header" th:insert="/blocks/header :: header">MENU HERE :D</div>
 
 <form method="post" action="#" th:action="@{/submitShow}" th:object="${show}"  >
-    <input type="text" th:field="*{date_time}">
+    <input type="text" placeholder="date" th:field="*{date_time}" />
+    <input type="text" placeholder="theater" th:field="*{theater}" />
+
 
     <select th:field="*{displayMovie}">
         <option th:each="movie: ${movies}" th:value="${movie}" > <p th:text="${movie.title}" ></p>  </option>
