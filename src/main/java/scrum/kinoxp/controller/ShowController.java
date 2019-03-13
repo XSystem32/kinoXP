@@ -3,8 +3,10 @@ package scrum.kinoxp.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.model.Show;
 import scrum.kinoxp.service.MovieService;
@@ -36,5 +38,13 @@ public class ShowController {
         return REDIRECT_INDEX;
     }
 
+    @RequestMapping(value = "/displayShow", method = RequestMethod.GET)
+    public String displayShow(@RequestParam(name="id") String id, Model model){
+        Show show = showService.getShow(Integer.parseInt(id));
+        Movie movie = movieService.getMovie(show.get)
+        model.addAttribute()
+        showService.createShow(show);
+        return REDIRECT_INDEX;
+    }
 
 }
