@@ -11,11 +11,11 @@
 
 <form method="post" action="#" th:action="@{/submitShow}" th:object="${show}"  >
     <input type="text" placeholder="date" th:field="*{date_time}" />
-    <input type="text" placeholder="theater" th:field="*{theater}" />
+    <input type="number" placeholder="theatre ID" th:field="*{theatreId}" />
 
 
-    <select th:field="*{displayMovie}">
-        <option th:each="movie: ${movies}" th:value="${movie}" > <p th:text="${movie.title}" ></p>  </option>
+    <select th:field="*{movieId}">
+        <option th:each="movie: ${movies}" th:value="${movie.id}" > <p th:text="${movie.title}" ></p>  </option>
     </select>
 
 
