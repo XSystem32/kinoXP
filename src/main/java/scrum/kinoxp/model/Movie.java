@@ -16,14 +16,13 @@ public class Movie {
     public Movie() {
     }
 
-    public Movie(int id, String title, String description, String cover, String trailer, String duration, List<Show> shows) {
+    public Movie(int id, String title, String description, String cover, String trailer, String duration) {
         this.id = id;
         this.title = title;
         this.description = description;
         this.cover = cover;
         this.trailer = trailer;
         this.duration = duration;
-        this.shows = shows;
     }
 
 
