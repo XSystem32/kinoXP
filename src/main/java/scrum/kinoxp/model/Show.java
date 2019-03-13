@@ -5,7 +5,7 @@ import java.util.List;
 public class Show {
 
     private int id;
-    private Movie movie;
+    private Movie displayMovie;
     private List<Booking> bookings;
     private String date_time;
     private Theater theater;
@@ -52,6 +52,14 @@ public class Show {
 
     public void setTheater(Theater theater) {
         this.theater = theater;
+    }
+
+    public Movie getDisplayMovie() {
+        return displayMovie;
+    }
+
+    public void setDisplayMovie(Movie movie) {
+        this.displayMovie = movie;
     }
 
     @Override
