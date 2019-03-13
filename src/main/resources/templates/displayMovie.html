@@ -20,7 +20,7 @@
         </div>
 
         <div th:each="show: ${movie.shows}">
-            <div> <p th:text="${show.id}" ></p> </div>
+            <div> <a th:href="@{/displayShow(id=${show.id})}" ><p th:text="${show.id}" ></p> </a> </div>
         </div>
 
 

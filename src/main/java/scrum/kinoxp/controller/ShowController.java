@@ -18,6 +18,7 @@ public class ShowController {
     private final String INDEX = "index";
     private final String REDIRECT_INDEX = "redirect:/";
     private final String CREATE_SHOW = "createShow";
+    private final String DISPLAY_SHOW = "displayShow";
 
     @Autowired
     ShowService showService;
@@ -41,10 +42,10 @@ public class ShowController {
     @RequestMapping(value = "/displayShow", method = RequestMethod.GET)
     public String displayShow(@RequestParam(name="id") String id, Model model){
         Show show = showService.getShow(Integer.parseInt(id));
-        Movie movie = movieService.getMovie(show.get)
-        model.addAttribute()
-        showService.createShow(show);
-        return REDIRECT_INDEX;
+        Movie movie = movieService.getMovie(show.getMovieId());
+        model.addAttribute("show", show);
+        model.addAttribute("movie", movie);
+        return DISPLAY_SHOW;
     }
 
 }
