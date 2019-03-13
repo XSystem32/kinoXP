@@ -11,7 +11,7 @@ public class Show {
     private String date_time;
     private Theatre theatre;
     private int theatreId;
-    private ArrayList<Seat> seats = new ArrayList<>();
+    private ArrayList<Row> rows = new ArrayList<>();
 
     public Show() {
     }
@@ -70,24 +70,24 @@ public class Show {
         return theatreId;
     }
 
+    public void generateRows(int amountOfRows, int rowLength){
+        for (int i = 0; i < amountOfRows; i++) {
+            rows.add(new Row(rowLength));
+        }
+    }
+
     public void setTheatreId(int theatreId) {
         this.theatreId = theatreId;
     }
 
-    public ArrayList<Seat> getSeats() {
-        return seats;
+    public ArrayList<Row> getRows() {
+        return rows;
     }
 
-    public void setSeats(ArrayList<Seat> seats) {
-        this.seats = seats;
-    }
 
-    public void generateSeats(){
-        int amountOfSeats = theatre.getRowLength() * theatre.getAmountOfRows();
 
-        for (int i = 0; i < amountOfSeats; i++){
-            seats.add(new Seat(i, false));
-        }
+    public void setRows(ArrayList<Row> rows) {
+        this.rows = rows;
     }
 
     @Override

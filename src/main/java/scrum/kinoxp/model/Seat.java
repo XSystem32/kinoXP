@@ -3,14 +3,14 @@ package scrum.kinoxp.model;
 public class Seat {
 
     private int id;
-    private boolean take;
+    private boolean taken;
 
     public Seat() {
     }
 
-    public Seat(int id, boolean take) {
+    public Seat(int id, boolean taken) {
         this.id = id;
-        this.take = take;
+        this.taken = taken;
     }
 
     public int getId() {
@@ -21,19 +21,19 @@ public class Seat {
         this.id = id;
     }
 
-    public boolean isTake() {
-        return take;
+    public boolean isTaken() {
+        return taken;
     }
 
-    public void setTake(boolean take) {
-        this.take = take;
+    public void setTaken(boolean taken) {
+        this.taken = taken;
     }
 
     @Override
     public String toString() {
         return "Seat{" +
                 "id=" + id +
-                ", take=" + take +
+                ", taken=" + taken +
                 '}';
     }
 }
