@@ -3,11 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <title>Display shows</title>
+    <link rel="stylesheet" type="text/css" th:href="@{/beautiful.css}" />
+    <link rel="stylesheet" type="text/css" th:href="@{/displayMovie.css}" />
 </head>
 <body>
 <div id="header" th:insert="/blocks/header :: header ">MENU HERE :D</div>
 
-<div> <p th:text="${movie} " > </p> </div>
+<div> <p th:text="${movie.title} " > </p> </div>
 <div> <p th:text="${movie.duration} " > </p> </div>
 
 
