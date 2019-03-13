@@ -14,5 +14,20 @@
 <div> <p th:text="${show.date_time} " > </p> </div>
 
 
+<div>
+
+    <form>
+        <input th:each="seat: ${show.seats}" type="checkbox" disabled> 
+
+
+    </form>
+
+
+</div>
+
+
+
+
+
 </body>
 </html>

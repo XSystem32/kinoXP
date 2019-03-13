@@ -43,6 +43,7 @@ public class ShowController {
     public String displayShow(@RequestParam(name="id") String id, Model model){
         Show show = showService.getShow(Integer.parseInt(id));
         Movie movie = movieService.getMovie(show.getMovieId());
+
         model.addAttribute("show", show);
         model.addAttribute("movie", movie);
         return DISPLAY_SHOW;

@@ -70,8 +70,17 @@ public class ShowRepository implements ShowRepo{
         this.theaters = theaters;
     }
 
+    public Theater getTheatreById(int id) {
+        for (Theater t: theaters) {
+            if(t.getId() == id)
+                return t;
+        }
+        return new Theater();
+    }
+
     private int nextId() {
         lastId++;
         return lastId;
     }
+
 }

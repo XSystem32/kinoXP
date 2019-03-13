@@ -1,5 +1,6 @@
 package scrum.kinoxp.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Show {
@@ -10,6 +11,7 @@ public class Show {
     private String date_time;
     private Theater theater;
     private int theatreId;
+    private ArrayList<Seat> seats = new ArrayList<>();
 
     public Show() {
     }
@@ -70,6 +72,22 @@ public class Show {
 
     public void setTheatreId(int theatreId) {
         this.theatreId = theatreId;
+    }
+
+    public ArrayList<Seat> getSeats() {
+        return seats;
+    }
+
+    public void setSeats(ArrayList<Seat> seats) {
+        this.seats = seats;
+    }
+
+    public void generateSeats(){
+        int amountOfSeats = theater.getRowLength() * theater.getAmountOfRows();
+
+        for (int i = 0; i < amountOfSeats; i++){
+            seats.add(new Seat(i, false));
+        }
     }
 
     @Override

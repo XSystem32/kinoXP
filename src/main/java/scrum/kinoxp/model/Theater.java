@@ -1,5 +1,7 @@
 package scrum.kinoxp.model;
 
+import java.util.ArrayList;
+
 public class Theater {
     private int id;
     private int rowLength;
@@ -13,6 +15,7 @@ public class Theater {
         this.id = id;
         this.rowLength = rowLength;
         this.amountOfRows = amountOfRows;
+
     }
 
     public int getId() {
