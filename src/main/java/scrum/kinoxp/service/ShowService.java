@@ -17,7 +17,8 @@ public class ShowService implements ShowRepo {
 
     @Override
     public boolean createShow(Show show) {
-        return false;
+        showRepo.createShow(show);
+        return true;
     }
 
     @Override
