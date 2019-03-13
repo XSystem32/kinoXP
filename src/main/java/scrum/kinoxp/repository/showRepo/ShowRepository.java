@@ -13,6 +13,7 @@ public class ShowRepository implements ShowRepo{
 
     private ArrayList<Show> shows = new ArrayList<>();
     private ArrayList<Theater> theaters = new ArrayList<>();
+    private int lastId = 0;
 
 
     public void repoInit() {
@@ -22,6 +23,7 @@ public class ShowRepository implements ShowRepo{
 
     @Override
     public boolean createShow(Show show) {
+        show.setId(nextId());
         shows.add(show);
         return true;
     }
@@ -62,5 +64,10 @@ public class ShowRepository implements ShowRepo{
 
     public void setTheaters(ArrayList<Theater> theaters) {
         this.theaters = theaters;
+    }
+
+    private int nextId() {
+        lastId++;
+        return lastId;
     }
 }
