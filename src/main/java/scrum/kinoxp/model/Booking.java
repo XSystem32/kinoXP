@@ -1,13 +1,14 @@
 package scrum.kinoxp.model;
 
 import javax.naming.Name;
+import java.util.ArrayList;
 import java.util.List;
 
 public class Booking {
     private int id;
     private String name;
     private Show show;
-    private List<Seat> seats;
+    private List<Seat> seats = new ArrayList<>();
 
     public Booking() {
     }

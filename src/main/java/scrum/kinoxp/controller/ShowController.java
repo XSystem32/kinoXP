@@ -7,6 +7,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import scrum.kinoxp.model.Booking;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.model.Show;
 import scrum.kinoxp.service.MovieService;
@@ -44,9 +45,18 @@ public class ShowController {
         Show show = showService.getShow(Integer.parseInt(id));
         Movie movie = movieService.getMovie(show.getMovieId());
 
+        model.addAttribute("booking", new Booking());
         model.addAttribute("show", show);
         model.addAttribute("movie", movie);
         return DISPLAY_SHOW;
+    }
+    @RequestMapping(value = "/submitBooking", method = RequestMethod.POST)
+    public String submitBooking(@ModelAttribute Show show, @ModelAttribute Booking booking){
+        booking.setShow(show);
+        System.out.println(booking);
+
+
+        return REDIRECT_INDEX;
     }
 
 }

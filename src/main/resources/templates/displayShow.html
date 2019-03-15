@@ -15,14 +15,19 @@
 
 
 <div>
-    <form>
-        <div th:each="row: ${show.rows}">
-            <span th:each="seat: ${row.seats}">
-                <span th:text="${seat.id}" ></span>
-                <input th:if="${seat.taken} == true" type="checkbox" disabled>
-                <input th:if="${seat.taken} == false" type="checkbox">
-            </span>
-        </div>
+    <form method="post" action="submitBooking" >
+        <input type="hidden" th:field="${booking.show.id}" th:value="show.id">
+        <table>
+            <tr th:each="row: ${show.rows}">
+                <td th:each="seat: ${row.seats}">
+                    <input th:if="${seat.taken} == true" type="checkbox" disabled>
+                    <input th:if="${seat.taken} == false" type="checkbox" th:value="${seat.id}"  >
+                    <span th:text="${seat.id}" ></span>
+                </td>
+            </tr>
+        </table>
+        <input type="text" placeholder="username"  th:field="${booking.name}" >
+        <input type="submit">
     </form>
 </div>
 
