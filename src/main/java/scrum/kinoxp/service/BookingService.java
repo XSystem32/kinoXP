@@ -17,26 +17,30 @@ public class BookingService implements BookingRepo {
 
     @Override
     public boolean createBooking(Booking booking) {
-        return false;
+        bookingRepo.createBooking(booking);
+        return true;
     }
 
     @Override
-    public boolean deleteBooking(int index) {
-        return false;
+    public boolean deleteBooking(int id) {
+        bookingRepo.deleteBooking(id);
+        return true;
     }
 
     @Override
     public boolean updateBooking(Booking booking) {
-        return false;
+        bookingRepo.updateBooking(booking);
+        return true;
     }
 
     @Override
-    public Booking getBooking(int index) {
-        return null;
+    public Booking getBooking(int id) {
+        return bookingRepo.getBooking(id);
     }
 
     @Override
     public List<Booking> getBookings() {
+
         return null;
     }
 }

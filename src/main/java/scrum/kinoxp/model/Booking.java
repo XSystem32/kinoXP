@@ -1,18 +1,20 @@
 package scrum.kinoxp.model;
 
+import javax.naming.Name;
 import java.util.List;
 
 public class Booking {
     private int id;
-    private Customer customer;
+    private String name;
+    private Show show;
     private List<Seat> seats;
 
     public Booking() {
     }
 
-    public Booking(int id, Customer customer, List<Seat> seats) {
+    public Booking(int id, String name, Show show, List<Seat> seats) {
         this.id = id;
-        this.customer = customer;
+        this.name = name;
         this.seats = seats;
     }
 
@@ -24,12 +26,12 @@ public class Booking {
         this.id = id;
     }
 
-    public Customer getCustomer() {
-        return customer;
+    public String getName() {
+        return name;
     }
 
-    public void setCustomer(Customer customer) {
-        this.customer = customer;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public List<Seat> getSeats() {
@@ -40,11 +42,20 @@ public class Booking {
         this.seats = seats;
     }
 
+    public Show getShow() {
+        return show;
+    }
+
+    public void setShow(Show show) {
+        this.show = show;
+    }
+
     @Override
     public String toString() {
         return "Booking{" +
                 "id=" + id +
-                ", customer=" + customer +
+                ", name='" + name + '\'' +
+                ", show=" + show +
                 ", seats=" + seats +
                 '}';
     }
