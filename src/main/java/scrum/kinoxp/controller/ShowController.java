@@ -44,15 +44,18 @@ public class ShowController {
     public String displayShow(@RequestParam(name="id") String id, Model model){
         Show show = showService.getShow(Integer.parseInt(id));
         Movie movie = movieService.getMovie(show.getMovieId());
+        Booking booking = new Booking();
+        booking.setShowId(show.getId());
 
-        model.addAttribute("booking", new Booking());
+        model.addAttribute("booking", booking);
+
+
         model.addAttribute("show", show);
         model.addAttribute("movie", movie);
         return DISPLAY_SHOW;
     }
     @RequestMapping(value = "/submitBooking", method = RequestMethod.POST)
-    public String submitBooking(@ModelAttribute Show show, @ModelAttribute Booking booking){
-        booking.setShow(show);
+    public String submitBooking(@ModelAttribute Booking booking){
         System.out.println(booking);
 
 
