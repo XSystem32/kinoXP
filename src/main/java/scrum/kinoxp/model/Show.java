@@ -72,7 +72,7 @@ public class Show {
 
     public void generateRows(int amountOfRows, int rowLength){
         for (int i = 0; i < amountOfRows; i++) {
-            rows.add(new Row(rowLength));
+            rows.add(new Row(i, rowLength));
         }
     }
 
