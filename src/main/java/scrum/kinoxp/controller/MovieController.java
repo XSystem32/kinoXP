@@ -4,11 +4,15 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
+import scrum.kinoxp.model.Booking;
 import scrum.kinoxp.model.Movie;
+import scrum.kinoxp.model.Show;
+import scrum.kinoxp.model.Theatre;
 import scrum.kinoxp.repository.movieRepo.MovieRepository;
 import scrum.kinoxp.service.MovieService;
 import scrum.kinoxp.service.ShowService;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Controller
@@ -36,6 +40,14 @@ public class MovieController {
     public String test(){
         movieRepository.repoInit();
         showService.repoInit();
+        Theatre theatre = showService.getTheatreById(1);
+
+        showService.createShow(new Show(0,1, new ArrayList<Booking>(), "Today ffs", theatre));
+
+        for (Show s : showService.getShows()) {
+            s.generateRows(theatre.getAmountOfRows(),theatre.getRowLength());
+        }
+
         return REDIRECT_INDEX;
     }
 

@@ -50,7 +50,7 @@ public class ShowService implements ShowRepo {
 
     @Override
     public List<Show> getShows() {
-        return null;
+        return showRepo.getShows();
     }
 
     public Theatre getTheatreById(int id) {
