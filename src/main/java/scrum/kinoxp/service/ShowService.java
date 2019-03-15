@@ -42,7 +42,9 @@ public class ShowService implements ShowRepo {
 
         Show show = showRepo.getShow(id);
         Theatre theatre = getTheatreById(show.getTheatreId());
-        show.generateRows(theatre.getAmountOfRows(), theatre.getRowLength());
+        if (!(show.getRows().size() > 0)) {
+            show.generateRows(theatre.getAmountOfRows(), theatre.getRowLength());
+        }
         return show;
     }
 
