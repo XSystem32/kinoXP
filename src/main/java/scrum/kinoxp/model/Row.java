@@ -5,9 +5,11 @@ import java.util.ArrayList;
 public class Row {
     private int length;
     private ArrayList<Seat> seats = new ArrayList<>();
+    int id;
 
-    public Row(int length) {
+    public Row(int id, int length) {
         this.length = length;
+        this.id = id;
         generateSeats();
     }
 
@@ -33,7 +35,7 @@ public class Row {
 
     public void generateSeats(){
         for (int i = 0; i < length; i++) {
-            seats.add(new Seat(i, false));
+            seats.add(new Seat(i + (id * length), false));
         }
     }
 

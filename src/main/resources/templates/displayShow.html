@@ -18,6 +18,7 @@
     <form>
         <div th:each="row: ${show.rows}">
             <span th:each="seat: ${row.seats}">
+                <span th:text="${seat.id}" ></span>
                 <input th:if="${seat.taken} == true" type="checkbox" disabled>
                 <input th:if="${seat.taken} == false" type="checkbox">
             </span>
