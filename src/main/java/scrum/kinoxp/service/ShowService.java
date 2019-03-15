@@ -2,12 +2,13 @@ package scrum.kinoxp.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import scrum.kinoxp.model.Seat;
-import scrum.kinoxp.model.Show;
-import scrum.kinoxp.model.Theatre;
+import scrum.kinoxp.model.*;
+import scrum.kinoxp.repository.bookingRepo.BookingRepo;
+import scrum.kinoxp.repository.bookingRepo.BookingRepository;
 import scrum.kinoxp.repository.showRepo.ShowRepo;
 import scrum.kinoxp.repository.showRepo.ShowRepository;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -16,6 +17,8 @@ public class ShowService implements ShowRepo {
     @Autowired
     ShowRepository showRepo;
 
+    @Autowired
+    BookingRepository bookingRepo;
 
     @Override
     public boolean createShow(Show show) {
@@ -42,9 +45,14 @@ public class ShowService implements ShowRepo {
 
         Show show = showRepo.getShow(id);
         Theatre theatre = getTheatreById(show.getTheatreId());
+        ArrayList<Booking> showBookings = bookingRepo.getBookingsByShowId(show.getId());
+
         if (!(show.getRows().size() > 0)) {
             show.generateRows(theatre.getAmountOfRows(), theatre.getRowLength());
         }
+
+
+
         return show;
     }
 

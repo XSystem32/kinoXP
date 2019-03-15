@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import scrum.kinoxp.model.Booking;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.model.Show;
+import scrum.kinoxp.service.BookingService;
 import scrum.kinoxp.service.MovieService;
 import scrum.kinoxp.service.ShowService;
 
@@ -26,6 +27,9 @@ public class ShowController {
 
     @Autowired
     MovieService movieService;
+
+    @Autowired
+    BookingService bookingService;
 
     @RequestMapping(value = "/createShow", method = RequestMethod.GET)
     public String createMovie(Model model){
@@ -56,9 +60,7 @@ public class ShowController {
     }
     @RequestMapping(value = "/submitBooking", method = RequestMethod.POST)
     public String submitBooking(@ModelAttribute Booking booking){
-        System.out.println(booking);
-
-
+        bookingService.createBooking(booking);
         return REDIRECT_INDEX;
     }
 
