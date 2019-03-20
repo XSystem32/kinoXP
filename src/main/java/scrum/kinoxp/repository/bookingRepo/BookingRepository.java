@@ -20,6 +20,8 @@ public class BookingRepository implements BookingRepo{
         return false;
     }
 
+
+
     @Override
     public boolean deleteBooking(int id) {
 
@@ -65,6 +67,18 @@ public class BookingRepository implements BookingRepo{
         return new Booking();
     }
 
+    public ArrayList<Booking> getBookingsByShowId(int showId) {
+        ArrayList<Booking> result = new ArrayList();
+
+        for (Booking b : bookings) {
+            if (b.getShowId() == showId) {
+                result.add(b);
+            }
+        }
+
+
+        return result;
+    }
 
     @Override
     public List<Booking> getBookings() {

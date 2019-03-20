@@ -11,6 +11,7 @@ import scrum.kinoxp.model.Booking;
 import scrum.kinoxp.model.Movie;
 import scrum.kinoxp.model.Seat;
 import scrum.kinoxp.model.Show;
+import scrum.kinoxp.service.BookingService;
 import scrum.kinoxp.service.MovieService;
 import scrum.kinoxp.service.ShowService;
 
@@ -31,6 +32,9 @@ public class ShowController {
     @Autowired
     MovieService movieService;
 
+    @Autowired
+    BookingService bookingService;
+
     @RequestMapping(value = "/createShow", method = RequestMethod.GET)
     public String createMovie(Model model){
         model.addAttribute("movies", movieService.getMovies());
@@ -48,18 +52,19 @@ public class ShowController {
     public String displayShow(@RequestParam(name="id") String id, Model model){
         Show show = showService.getShow(Integer.parseInt(id));
         Movie movie = movieService.getMovie(show.getMovieId());
+        Booking booking = new Booking();
+        booking.setShowId(show.getId());
 
-        model.addAttribute("booking", new Booking());
+        model.addAttribute("booking", booking);
+
+
         model.addAttribute("show", show);
         model.addAttribute("movie", movie);
         return DISPLAY_SHOW;
     }
     @RequestMapping(value = "/submitBooking", method = RequestMethod.POST)
-    public String submitBooking(@ModelAttribute Show show, @ModelAttribute Booking booking){
-        booking.setShow(show);
-        System.out.println(booking);
-
-
+    public String submitBooking(@ModelAttribute Booking booking){
+        bookingService.createBooking(booking);
         return REDIRECT_INDEX;
     }
 
