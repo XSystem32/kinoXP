@@ -9,9 +9,13 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import scrum.kinoxp.model.Booking;
 import scrum.kinoxp.model.Movie;
+import scrum.kinoxp.model.Seat;
 import scrum.kinoxp.model.Show;
 import scrum.kinoxp.service.MovieService;
 import scrum.kinoxp.service.ShowService;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @Controller
 public class ShowController {
