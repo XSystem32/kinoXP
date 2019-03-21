@@ -1,5 +1,5 @@
 <div id="header" th:fragment="header" xmlns:th="http://www.w3.org/1999/xhtml">
-    <div id="logo">KinoXP</div>
+    <div id="logo"><h1>KinoXP</h1></div>
 
     <div id="menu" th:fragment="menu" xmlns:th="http://www.w3.org/1999/xhtml">
         <a href="/">Movies</a>
@@ -8,15 +8,13 @@
         <a href="">Staff</a>
         <a href="">Food</a>
 
+    </div>
 
-        <div>
-            <div>
-                <form th:action="@{/searchMovie}" method="POST">
-                    <input type="text" name="search" id="search" th:value="${search}"/>
-                    <input type="submit" value="Search"/>
-                </form>
-            </div>
-        </div>
+    <div id="search">
+        <form th:action="@{/searchMovie}" method="POST">
+            <input type="text" name="search" th:value="${search}"/>
+            <input type="submit" value="Search"/>
+        </form>
     </div>
 
 

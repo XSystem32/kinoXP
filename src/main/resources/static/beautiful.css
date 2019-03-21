@@ -9,16 +9,35 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
+    width: 100%;
 }
 
 #logo{
     font-weight: bold;
-    font-size: 300%;
+    font-size: 200%;
     color: #FFFFFF;
+    border-radius: 1px;
+    border: 2px solid #FFFFFF;
+    background: #221f27;
+    box-sizing: border-box;
+    width: 16%;
+    margin-left: 5px;
+    transform: translateY(10px);
 }
+
+h1 {
+
+}
+
 #menu {
     background: #221f27;
     font-size: 30px;
+    width: 650px;
+    margin-left: 5px;
+    border-radius: 3px;
+    border: 2px solid #FFFFFF;
+    box-sizing: border-box;
+    transform: translateY(70%);
 }
 
 #menu a:visited {
@@ -30,7 +49,7 @@ body {
 }
 
 .movieWrapper {
-    background: #253191;
+    background: #221f27;
     border: 2px solid #FFFFFF;
     border-radius: 7px;
     float: left;
@@ -74,11 +93,40 @@ input[type=text], select {
     box-sizing: border-box;
 }
 
+#search input[type=submit] {
+    width: 15%;
+    background-color: #FFFFFF;
+    color: black;
+    padding: 4px 4px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 20px;
+    transform: translateY(2px);
+}
+
+#search input[type=submit]:hover {
+    background-color: #221f27;
+    color: #FFFFFF;
+}
+
+#search input[name=search] {
+    width: 45%;
+    padding: 8px 8px;
+}
+
+#search {
+    padding: 8px 8px;
+    width: 30%;
+    margin-left: 80%;
+}
+
 input[type=submit] {
     width: 7%;
     background-color: #FFFFFF;
     color: black;
-    padding: 8px 8px;
+    padding: 4px 4px;
     margin: 8px 0;
     border: none;
     border-radius: 4px;
@@ -87,14 +135,8 @@ input[type=submit] {
 }
 
 input[type=submit]:hover {
-    background-color: #253191;
+    background-color: #221f27;
+    color: #FFFFFF;
 }
 
-#search {
-    padding: 5px 8px;
-}
-
-#search input [type=submit] {
-    padding: 5px 5px;
-}
 
