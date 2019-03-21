@@ -26,7 +26,7 @@
                     <input th:if="${seat.taken} == true" type="checkbox" disabled>
                     <input th:if="${seat.taken} == false" type="checkbox" th:value="${seat.id}" th:field="${booking.seats}">
 
-                    <span th:text="${seat.id}" ></span>
+                    <span th:text="${seat.id}" ></span  >
                 </td>
                 </tr>
             </tr>

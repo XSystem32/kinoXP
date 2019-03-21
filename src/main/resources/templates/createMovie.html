@@ -9,12 +9,29 @@
 
 <div id="header" th:insert="/blocks/header :: header">MENU HERE :D</div>
 
+<div class="createMenu">
+
 <form method="post" action="#" th:action="@{/submitMovie}" th:object="${movie}"  >
-    <input type="text" placeholder="title" th:field="*{title}">
-    <input type="text" placeholder="duration" th:field="*{duration}" />
-    <input type="text" placeholder="cover" th:field="*{cover}" />
-    <input type="text" placeholder="trailer" th:field="*{trailer}" />
-    <input type="text" placeholder="description" th:field="*{description}" />
+
+    <div class="block">
+        <input type="text" placeholder="title" th:field="*{title}">
+    </div>
+
+    <div class="block">
+        <input type="text" placeholder="duration" th:field="*{duration}" />
+    </div>
+
+    <div class="block">
+        <input type="text" placeholder="cover" th:field="*{cover}" />
+    </div>
+
+    <div class="block">
+        <input type="text" placeholder="trailer" th:field="*{trailer}" />
+    </div>
+
+    <div class="block">
+        <input type="text" placeholder="description" th:field="*{description}" />
+    </div>
 
 
 
@@ -26,6 +43,7 @@
 
 </form>
 
+</div>
 
 
 </body>

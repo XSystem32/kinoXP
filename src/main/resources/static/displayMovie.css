@@ -28,10 +28,41 @@
     width: 400px;
     float: left;
 }
+
+#leftContainer a:link {
+    color: #FFFFFF;
+}
+
+#leftContainer a:visited {
+    color: #FFFFFF;
+}
+
+p {
+    color: #FFFFFF;
+}
+
+div {
+    color: #FFFFFF;
+}
+
+table {
+    color: #FFFFFF;
+}
+
+text {
+    color: #FFFFFF;
+}
+
 #rightContainer {
     width: 400px;
     float: left;
 }
 #rightContainer img {
     width: 400px;
+    margin: 40px;
+}
+
+.trailer {
+    border: 1px solid #FFFFFF;
+
 }
