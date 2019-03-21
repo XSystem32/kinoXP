@@ -26,8 +26,8 @@
 .movieWrapper {
     background: beige;
     float: left;
-    margin: 20px;
-    padding: 5px;
+    margin: 15px;
+    padding: 15px;
     width: 15%;
     min-height: 380px;
 }
@@ -35,10 +35,11 @@
     color: black;
     text-decoration: none;
     font-weight: bold;
+
 }
 
 .coverField {
-    background: #393939;
+    background: beige;
 }
 .coverField img {
     width: 100%;
