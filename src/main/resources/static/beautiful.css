@@ -4,12 +4,25 @@
     font-family: Arial;
 }
 #logo{
+    padding:15px;
     font-weight: bold;
     font-size: 300%;
 }
 #menu {
+    padding:10px 5px 10px 15px;
     background: beige;
+    margin-bottom: 10px;
 }
+#menu a{
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 25px;
+}
+#menu a:hover{
+    color: #7f7f7f;
+}
+
 .movieWrapper {
     background: beige;
     float: left;
@@ -17,6 +30,11 @@
     padding: 5px;
     width: 15%;
     min-height: 380px;
+}
+.movieWrapper a{
+    color: black;
+    text-decoration: none;
+    font-weight: bold;
 }
 
 .coverField {
@@ -30,4 +48,5 @@
 }
 .titleField {}
 .blockLink { display: block; }
-
+.right{ float: right; }
+.clear{ clear: both;}
